@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "493914627855",
+    "project_id": "pixmix-6a12e",
+    "storage_bucket": "pixmix-6a12e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493914627855:android:be09720daf7ca91c26687a",
+        "android_client_info": {
+          "package_name": "com.pixmix.pixmixclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493914627855-fmh1tvmgu2ng7m4c6uivhmjj1pn6uja3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pixmix.pixmixclient",
+            "certificate_hash": "6f5567649f85876f371e52431e92fc36616e85a8"
+          }
+        },
+        {
+          "client_id": "493914627855-n34okbrbh5c5rug72vl3kcig1tqhbgle.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pixmix.pixmixclient",
+            "certificate_hash": "7cd680b596dca6911cfd3f3b62a97bc780173da6"
+          }
+        },
+        {
+          "client_id": "493914627855-kdi0f5kpehgj10amals7k0ote4nh4idb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp_JPcbkcyX38Cyo-XK2dNcsX-AJ7jLSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493914627855-kdi0f5kpehgj10amals7k0ote4nh4idb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
