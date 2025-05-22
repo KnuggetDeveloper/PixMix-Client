@@ -1,7 +1,7 @@
-// services/notificationService.ts
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Notifications from "expo-notifications";
+import { User } from "firebase/auth";
 
 // API URLs
 const BACKEND_URL = "http://localhost:3000";
@@ -9,12 +9,12 @@ const BACKEND_URL = "http://localhost:3000";
 /**
  * Register FCM device token with backend
  *
- * @param userId User ID
+ * @param user Firebase user
  * @param fcmToken FCM device token
  * @param platform Device platform (ios/android)
  */
 export const registerFCMToken = async (
-  userId: string,
+  user: User,
   fcmToken: string,
   platform: string
 ): Promise<void> => {
@@ -32,7 +32,7 @@ export const registerFCMToken = async (
     await axios.post(
       `${BACKEND_URL}/register-token`,
       {
-        userId,
+        userId: user.uid,
         fcmToken,
         platform,
       },

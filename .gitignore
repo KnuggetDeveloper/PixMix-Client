@@ -1,15 +1,13 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
 # dependencies
 node_modules/
 
-# Expo
+# Expo & output
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native
+# Native build artifacts
 .kotlin/
 *.orig.*
 *.jks
@@ -21,7 +19,7 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
-# debug
+# Debug logs
 npm-debug.*
 yarn-debug.*
 yarn-error.*
@@ -30,14 +28,15 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
-.env*.local
-
-# typescript
+# TypeScript
 *.tsbuildinfo
 
-app-example
+# Local env
+.env*.local
 
-# firebase
+# Firebase Admin SDK (KEEP IGNORED for backend only)
 pixmix-6a12e-firebase-adminsdk-fbsvc-47903832e2.json
 credentials.json
+
+# ✅ DO NOT ignore google-services.json now
+# android/app/google-services.json ← This MUST be tracked by Git!

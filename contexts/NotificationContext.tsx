@@ -64,15 +64,16 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({
 
       // Get push notification token
       const token = await Notifications.getExpoPushTokenAsync({
-        projectId: "56fd0421-9f1c-42d7-835a-92cf85f9f8f9", // Your Expo project ID from app.json
+        projectId:
+          process.env.EXPO_PROJECT_ID || "56fd0421-9f1c-42d7-835a-92cf85f9f8f9",
       });
-      
+
       setNotificationToken(token.data);
       await AsyncStorage.setItem("fcmToken", token.data);
 
       // Register token with backend if user is authenticated
       if (user && token.data) {
-        await registerFCMToken(user.uid, token.data, Platform.OS);
+        await registerFCMToken(user, token.data, Platform.OS);
       }
 
       // Set up notification channels for Android
@@ -112,7 +113,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({
           if (data.notificationType === "image_ready") {
             // Navigate to result screen with processed image data
             router.push({
-              pathname: '/result',
+              pathname: "/result",
               params: {
                 imageUrl: data.imageUrl,
                 filterName: data.filterType,

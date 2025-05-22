@@ -2,15 +2,15 @@
 import axios from 'axios';
 
 // API URLs - Use the development URLs when running locally
-const AUTH_SERVICE_URL = "http://localhost:4000"; // Replace with your actual deployed URL
+const AUTH_SERVICE_URL =  "https://gcloud-authentication-493914627855.us-central1.run.app"; 
 
 /**
  * Exchanges a Firebase ID token for a Cloud Run token
  * 
- * @param firebaseToken Firebase ID token
+ * @param idToken Firebase ID token
  * @returns Cloud Run token string
  */
-export const getCloudRunToken = async (firebaseToken: string): Promise<string> => {
+export const getCloudRunToken = async (idToken: string): Promise<string> => {
   try {
     console.log(`Requesting Cloud Run token from ${AUTH_SERVICE_URL}/auth/public-token`);
     
@@ -19,7 +19,7 @@ export const getCloudRunToken = async (firebaseToken: string): Promise<string> =
       {},
       {
         headers: {
-          Authorization: `Bearer ${firebaseToken}`,
+          Authorization: `Bearer ${idToken}`,
           'Content-Type': 'application/json',
         },
       }
